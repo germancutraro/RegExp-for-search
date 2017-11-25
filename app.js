@@ -16,8 +16,8 @@ app.get('/', (req, res) => {
 });
 
 app.post('/search', (req, res) => {
-  var regex = new RegExp(req.body.name, "i");
-  var query = { name: regex };
+  let regex = new RegExp(req.body.name, "i");
+  let query = { name: regex };
   User.find(query).then(docs => {
     if (docs.length > 0)
       res.send(docs);
